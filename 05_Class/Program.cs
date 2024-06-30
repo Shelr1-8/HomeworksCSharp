@@ -61,22 +61,22 @@
 
     public class Calculator
     {
-        public double Add(double a, double b)
+        public double Add(int a, int b)
         {
             return a + b;
         }
 
-        public double Sub(double a, double b)
+        public double Sub(int a, int b)
         {
             return a - b;
         }
 
-        public double Mul(double a, double b)
+        public double Mul(int a, int b)
         {
             return a * b;
         }
 
-        public double Div(double a, double b)
+        public double Div(int a, int b)
         {
             if (b == 0)
             {
@@ -121,8 +121,10 @@
 
             Console.WriteLine("Zavdanna 2");
             Calculator calculator = new Calculator();
-            double num1 = 10;
-            double num2 = 5;
+            Console.Write("Enter first number: ");
+            int num1 = int.Parse(Console.ReadLine());
+            Console.Write("Enter second number: ");
+            int num2 = int.Parse(Console.ReadLine());
 
             Console.WriteLine($"Addition: {calculator.Add(num1, num2)}");  
             Console.WriteLine($"Subtraction: {calculator.Sub(num1, num2)}"); 
@@ -130,8 +132,7 @@
 
             try
             {
-                Console.WriteLine($"Division: {calculator.Div(num1, num2)}"); 
-                Console.WriteLine($"Division: {calculator.Div(num1, 0)}");    
+                Console.WriteLine($"Division: {calculator.Div(num1, num2)}");  
             }
             catch (DivideByZeroException e)
             {
