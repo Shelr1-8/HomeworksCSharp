@@ -59,10 +59,38 @@
         }
     }
 
+    public class Calculator
+    {
+        public double Add(double a, double b)
+        {
+            return a + b;
+        }
+
+        public double Sub(double a, double b)
+        {
+            return a - b;
+        }
+
+        public double Mul(double a, double b)
+        {
+            return a * b;
+        }
+
+        public double Div(double a, double b)
+        {
+            if (b == 0)
+            {
+                throw new DivideByZeroException("Divide by zero unreal.");
+            }
+            return a / b;
+        }
+    }
+
     internal class Program
     {
         static void Main(string[] args)
         {
+            Console.WriteLine("Zavdanna 1");
             try
             {
                 Worker[] worker = new Worker[2];
@@ -88,6 +116,26 @@
             {
                 Console.WriteLine(ex.Message);
                 throw;
+            }
+            Console.WriteLine();
+
+            Console.WriteLine("Zavdanna 2");
+            Calculator calculator = new Calculator();
+            double num1 = 10;
+            double num2 = 5;
+
+            Console.WriteLine($"Addition: {calculator.Add(num1, num2)}");  
+            Console.WriteLine($"Subtraction: {calculator.Sub(num1, num2)}"); 
+            Console.WriteLine($"Multiplication: {calculator.Mul(num1, num2)}");  
+
+            try
+            {
+                Console.WriteLine($"Division: {calculator.Div(num1, num2)}"); 
+                Console.WriteLine($"Division: {calculator.Div(num1, 0)}");    
+            }
+            catch (DivideByZeroException e)
+            {
+                Console.WriteLine(e.Message);
             }
         }
     }
