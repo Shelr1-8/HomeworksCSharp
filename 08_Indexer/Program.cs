@@ -1,6 +1,4 @@
-﻿using System.Drawing;
-
-namespace _08_Indexer
+﻿namespace _08_Indexer
 {
     public abstract class GeometriFigur
     {
