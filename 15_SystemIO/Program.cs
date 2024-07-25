@@ -99,7 +99,7 @@ namespace _15_SystemIO
             //Console.WriteLine($"Even numbers: {evenCount}");
             //Console.WriteLine($"Odd numbers: {oddCount}");
 
-            Console.WriteLine("Zavdanna 5");
+            Console.WriteLine("Zavdanna 6");
             Console.Write("Enter the file path: ");
             string filePath = Console.ReadLine();
             if (File.Exists(filePath))
